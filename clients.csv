@@ -1,0 +1,11 @@
+Client ID,Client Name,Country,Account Type,KYC,ID Proof,FATCA,Risk Level,Request Date,Processed Date,TAT,Maintenance,Closure Status,Closure Date,Approver
+C1001,Ramesh Gupta,USA,Trust,✅,✅,✅,Low,2025-07-07,2025-07-11,4,-,-,,
+C1002,Meena Shah,USA,Individual,✅,✅,❌,Medium,2025-07-09,2025-07-11,2,-,Closed,2025-07-20,
+C1003,John Doe,UAE,Individual,✅,✅,✅,Low,2025-07-04,2025-07-06,2,-,Closed,2025-07-12,Linda Wong
+C1004,Sara Ali,India,Joint,✅,✅,✅,Low,2025-07-10,2025-07-11,1,-,Pending,,
+C1005,David Kim,UAE,Joint,✅,✅,❌,Medium,2025-07-09,2025-07-10,1,-,Closed,2025-07-20,
+C1006,Nina Singh,China,Joint,✅,✅,✅,Low,2025-07-07,2025-07-11,4,-,-,,
+C1007,Wei Zhang,Pakistan,Joint,❌,✅,❌,High,2025-07-10,2025-07-11,1,-,Pending,,
+C1008,Ali Khan,USA,Joint,✅,✅,❌,Medium,2025-07-01,2025-07-02,1,-,Pending,,
+C1009,Priya Nair,UAE,Trust,✅,✅,❌,Medium,2025-06-30,2025-07-05,5,-,-,,
+C10010,Carlos Gomez,UK,Individual,✅,✅,✅,Low,2025-07-09,2025-07-13,4,-,-,,
