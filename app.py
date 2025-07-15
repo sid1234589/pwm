@@ -24,9 +24,9 @@ st.set_page_config(page_title="PWM Lifecycle Tracker", layout="wide")
 # Title
 st.title("🔐 PWM Client Lifecycle Tracker")
 
-# ✅ ONE AND ONLY form
+# ✅ One clean form
 with st.expander("➕ Add New Client"):
-    with st.form("new_client_form"):  # <-- UNIQUE key
+    with st.form("new_client_form"):
         st.subheader("Client Onboarding")
         cols = st.columns(2)
         client_id = cols[0].text_input("Client ID")
@@ -64,7 +64,7 @@ with st.expander("➕ Add New Client"):
             df.to_csv(data_file, index=False)
             st.success("✅ Client added successfully")
 
-# KPI Summary (No Closed Accounts)
+# KPI Summary
 st.header("📊 Summary Dashboard")
 kpi1, kpi2, kpi3, kpi4, kpi5 = st.columns(5)
 kpi1.metric("Total Clients", len(df))
@@ -88,6 +88,12 @@ with chart_col2:
         fig_risk = px.pie(df, names="Risk Level", title="Risk Breakdown")
         st.plotly_chart(fig_risk, use_container_width=True)
 
-# Client Table
+# Client Table (fix for Streamlit Cloud)
 st.subheader("📁 Client Data")
-st.dataframe(df)
+if not df.empty:
+    safe_df = df.copy()
+    safe_df["Request Date"] = safe_df["Request Date"].astype(str)
+    safe_df["Processed Date"] = safe_df["Processed Date"].astype(str)
+    st.dataframe(safe_df)
+else:
+    st.info("No client data found yet.")
